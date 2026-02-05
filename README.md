@@ -282,6 +282,7 @@ Proyecto desarrollado en equipo junto a:
 
 ## 📂 Repositorio
 🔗 https://github.com/SQuirosDev/E-Commerce-Mobile-App
+
 ---
 
 ## 🎥 Video Demostrativo
