@@ -1,3 +1,150 @@
+# 📱 Mobile E-Commerce Application
+
+**University project** developed as part of the course **Mobile Programming (Programming 3)**.  
+The main objective of this project was to design and develop a **mobile E-Commerce application** using a **layered architecture**, integrating database, backend, and frontend.
+
+This project represents one of the **most complete and advanced developments** carried out during the degree program, both in terms of architecture and the number of implemented features.
+
+---
+
+## 🎯 Project Objective
+
+To develop a mobile E-Commerce system that allows the management of users, products, and interactions, incorporating advanced functionalities such as email notifications, comments, real-time chat, and attempted integration of artificial intelligence and maps.
+
+---
+
+## 🧱 Project Architecture
+
+The project was designed using a **layered architecture**, where each layer is fully separated and organized into its own project.
+
+### 🔹 Database
+- Implemented using **SQL Server**
+- Use of **relational tables**
+- Stored Procedures (SP) for:
+  - Data insertion
+  - Data retrieval
+
+### 🔹 Backend
+- Developed using **.NET**
+- Data access through **LINQ**
+- Feature exposure via a **REST API**
+- Main responsibilities:
+  - Business logic
+  - Database communication
+  - Email notification sending
+  - Attempted integration with artificial intelligence (Algolia)
+- The API acts as an intermediary between the frontend and the database
+
+### 🔹 Frontend
+- Mobile application developed using **.NET MAUI**
+- Direct connection to the backend API
+- Clean and modern UI design
+- Features:
+  - Data input and visualization
+  - Smooth navigation
+  - Intuitive user experience
+
+**Compatibility and deployment**
+- Fully functional on **Windows Machine**
+- Issues were encountered on the **Android emulator**, mainly related to IP configuration and API endpoint communication
+- After deploying the **backend and database to Microsoft Azure**, the application worked correctly on a **real Android device**, validating proper functionality in a real mobile environment
+
+📌 **Data validation** was implemented across all layers to ensure data integrity.
+
+---
+
+## 🛠️ Technologies Used
+
+### Languages
+- SQL (Transact-SQL)
+- C#
+- XAML
+
+### Frameworks / Libraries
+- .NET
+- .NET MAUI
+
+### Tools
+- SQL Server
+- Visual Studio
+- Microsoft Azure
+
+---
+
+## ⚙️ Main Features
+
+### Users
+- User registration
+- User login
+- Email verification
+- Password change
+- User information retrieval
+- Role management
+- User logout
+
+### Products
+- Product creation
+- Product retrieval
+- Product listing
+- Filtered product listing
+- Recommended products
+- Last viewed product history
+
+### Interaction
+- Comment submission
+- Comment listing
+- Chat system
+
+---
+
+## 📈 Project Level
+
+**Advanced**
+
+---
+
+## 📌 Additional Notes and Scope
+
+This was my **fifth programmed project** and the **third large and complex university project**, involving a complete architecture with **Database, Backend, and Frontend**.
+
+During development, the project was **deployed to Microsoft Azure**, allowing the database, backend, and API to be published and accessed from a **real Android device**, validating functionality outside the local environment.
+
+The project was developed over the course of a **single academic term**, which required prioritization and scope definition. Some advanced features involved higher technical complexity:
+
+- **Chats:**  
+  Real-time communication was implemented using **SignalR**, achieving a general chat system. Individual chats between customers and sellers were out of scope due to time constraints.
+
+- **Artificial Intelligence:**  
+  Data was successfully sent to the AI service; however, responses could not be retrieved. Additionally, **Algolia's C# documentation** presented limitations that hindered full integration.
+
+- **Maps:**  
+  Integration was explored using **MAUI Maps** and the **Google Maps API**, but application crashes occurred during implementation, and time constraints prevented further resolution.
+
+- **Complete CRUD:**  
+  Some additional CRUD operations were not implemented due to the large number of existing features and limited development time.
+
+📌 **Demo video note:**  
+The demo video was recorded approximately **one year after** the project was developed. At that time, the **Azure student account** was no longer active, so the demo showcases full functionality on **Windows Machine** and a partial demonstration on the **Android emulator**.
+
+Project developed as a team with:
+- Sebastián Quirós
+- Ignacio Mejia
+- Angelo Valdivia
+
+---
+
+## 📂 Repository
+🔗 https://github.com/SQuirosDev/E-Commerce-Mobile-App
+
+---
+
+## 🎥 Demo Video
+🔗 https://youtu.be/yXA1ESIHlZw?si=0_AayB2y4VZIng3z
+
+---
+
+---
+
 # 📱 Aplicación Móvil de E-Commerce
 
 Proyecto **universitario** desarrollado como parte de la materia **Programación Móvil (Programación 3)**.  
