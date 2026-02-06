@@ -157,6 +157,37 @@ Project developed as a team with:
 
 ---
 
+## 👥 Team Contributions
+
+The project was developed as a team, with clearly defined responsibilities across each layer, feature, and deployment process:
+
+- **Database:**  
+  Ignacio Mejia  
+  Design and implementation of the SQL Server database, including table creation, stored procedures, and support for map integration.
+
+- **Backend and API Development:**  
+  Sebastián Quirós  
+  Backend development using .NET, REST API creation, business logic implementation, data validations, data access using LINQ, email notification handling, and artificial intelligence integration.
+
+- **Frontend (logic, validations, and API integration):**  
+  Sebastián Quirós  
+  Implementation of frontend logic using .NET MAUI, data validations, and API consumption.
+
+- **Frontend (views and visual design):**  
+  Sebastián Quirós & Angelo Valdivia  
+  Visual design of the application, creation of MAUI views, and development of the real-time chat system using SignalR.
+
+- **Deployment:**  
+  Sebastián Quirós  
+  Deployment of the SQL Server database and backend API to **Microsoft Azure**, configuration of public endpoints, and installation of the application on a **real Android device**.
+
+- **Additional Features:**  
+  - **Maps:** Ignacio Mejia  
+  - **Artificial Intelligence:** Sebastián Quirós  
+  - **Real-time Chats:** Angelo Valdivia
+
+---
+
 ---
 
 # 📱 Aplicación Móvil de E-Commerce
@@ -301,3 +332,34 @@ Proyecto desarrollado en equipo junto a:
 
 ## 🎥 Video Demostrativo
 🔗 https://youtu.be/yXA1ESIHlZw?si=0_AayB2y4VZIng3z
+
+---
+
+## 👥 Aportes del Equipo
+
+El proyecto fue desarrollado en equipo, con responsabilidades claramente definidas en cada capa, funcionalidad y proceso de despliegue:
+
+- **Base de datos:**  
+  Ignacio Mejia  
+  Diseño e implementación de la base de datos en SQL Server, incluyendo la creación de tablas, procedimientos almacenados y apoyo en la integración de mapas.
+
+- **Backend y desarrollo de la API:**  
+  Sebastián Quirós  
+  Desarrollo del backend en .NET, creación de la API REST, implementación de la lógica de negocio, validaciones, acceso a datos mediante LINQ, envío de notificaciones por correo e integración de inteligencia artificial.
+
+- **Frontend (lógica, validaciones y conexión con la API):**  
+  Sebastián Quirós  
+  Implementación de la lógica del frontend en .NET MAUI, validaciones de datos y consumo de la API.
+
+- **Frontend (vistas y diseño visual):**  
+  Sebastián Quirós y Angelo Valdivia  
+  Diseño visual de la aplicación, creación de vistas en MAUI y desarrollo del sistema de chat en tiempo real utilizando SignalR.
+
+- **Despliegue:**  
+  Sebastián Quirós  
+  Despliegue de la base de datos SQL Server y la API del backend en **Microsoft Azure**, configuración de endpoints públicos y la instalacion de la aplicación en un **dispositivo Android real**.
+
+- **Funcionalidades adicionales:**  
+  - **Mapas:** Ignacio Mejia  
+  - **Inteligencia Artificial:** Sebastián Quirós  
+  - **Chats en tiempo real:** Angelo Valdivia
