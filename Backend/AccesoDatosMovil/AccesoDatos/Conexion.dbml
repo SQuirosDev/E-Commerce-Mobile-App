@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QUERY_MOVIL_V2" Class="ConexionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=CompuSebas\SQLEXPRESS;Initial Catalog=QUERY_MOVIL_V2;Integrated Security=True;Encrypt=False" SettingsObjectName="AccesoDatosMovil.Properties.Settings" SettingsPropertyName="QUERY_MOVIL_V2ConnectionString2" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.ACTUALIZAR_CONTRASENA" Method="ACTUALIZAR_CONTRASENA">
+    <Parameter Name="CORREO" Parameter="cORREO" Type="System.String" DbType="NVarChar(55)" />
+    <Parameter Name="CONTRASENA_PLAIN" Parameter="cONTRASENA_PLAIN" Type="System.String" DbType="NVarChar(128)" />
+    <Parameter Name="SEMILLA_1" Parameter="sEMILLA_1" Type="System.String" DbType="NVarChar(128)" />
+    <Parameter Name="SEMILLA_2" Parameter="sEMILLA_2" Type="System.String" DbType="NVarChar(128)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_CAMBIAR_ROL_A_VENDEDOR" Method="SP_CAMBIAR_ROL_A_VENDEDOR">
+    <Parameter Name="ID_USUARIO" Parameter="iD_USUARIO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="SP_CAMBIAR_ROL_A_VENDEDORResult">
+      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_PERSONA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CORREO" Type="System.String" DbType="NVarChar(55) NOT NULL" CanBeNull="false" />
+      <Column Name="TELEFONO" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="UBICACION_STRING" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FECHA_REGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ROL" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ESTADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FECHA_ULTIMA_COMPRA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LONGITUD" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LATITUD" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_INGRESAR_CONVERSACION" Method="SP_INGRESAR_CONVERSACION">
+    <Parameter Name="ID_USUARIO" Parameter="iD_USUARIO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_USUARIO2" Parameter="iD_USUARIO2" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ES_SOPORTE" Parameter="eS_SOPORTE" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_INGRESAR_ERROR_BACKEND" Method="SP_INGRESAR_ERROR_BACKEND">
+    <Parameter Name="Codigo_Error" Parameter="codigo_Error" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Mensaje" Parameter="mensaje" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Resultado" Parameter="resultado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_INGRESAR_HISTORIAL_VISITA" Method="SP_INGRESAR_HISTORIAL_VISITA">
+    <Parameter Name="ID_USUARIO" Parameter="iD_USUARIO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_PRODUCTO" Parameter="iD_PRODUCTO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_INGRESAR_MENSAJE" Method="SP_INGRESAR_MENSAJE">
+    <Parameter Name="ID_CONVERSACION" Parameter="iD_CONVERSACION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_USUARIO" Parameter="iD_USUARIO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MENSAJE" Parameter="mENSAJE" Type="System.String" DbType="NVarChar(700)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_INSERTA_VERIFICACION" Method="SP_INSERTA_VERIFICACION">
+    <Parameter Name="CORREO" Parameter="cORREO" Type="System.String" DbType="NVarChar(55)" />
+    <Parameter Name="CODEVERIFICACION" Parameter="cODEVERIFICACION" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_INSERTAR_FEEDBACK" Method="SP_INSERTAR_FEEDBACK">
+    <Parameter Name="ID_PRODUCTO" Parameter="iD_PRODUCTO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_CLIENTE" Parameter="iD_CLIENTE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CALIFICACION" Parameter="cALIFICACION" Type="System.Decimal" DbType="Decimal(3,2)" />
+    <Parameter Name="COMENTARIO" Parameter="cOMENTARIO" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_INSERTAR_PRODUCTO" Method="SP_INSERTAR_PRODUCTO">
+    <Parameter Name="ID_USUARIO" Parameter="iD_USUARIO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NOMBRE" Parameter="nOMBRE" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="DESCRIPCION" Parameter="dESCRIPCION" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="PRECIO" Parameter="pRECIO" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="PRECIO_ALQUILER" Parameter="pRECIO_ALQUILER" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="TIPO_OPERACION" Parameter="tIPO_OPERACION" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="STOCK" Parameter="sTOCK" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CATEGORIA" Parameter="cATEGORIA" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="IMAGEN" Parameter="iMAGEN" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
+    <Parameter Name="ID_CATEGORIA" Parameter="iD_CATEGORIA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DISPONIBLE" Parameter="dISPONIBLE" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="SP_INSERTAR_PRODUCTOResult">
+      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="PRECIO" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PRECIO_ALQUILER" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="TIPO_OPERACION" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="STOCK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DISPONIBLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CALIFICACION_PROMEDIO" Type="System.Decimal" DbType="Decimal(3,2)" CanBeNull="true" />
+      <Column Name="FECHA_PUBLICACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IMAGEN" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="CATEGORIA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ID_CATEGORIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_LISTAR_CONVERSACIONES" Method="SP_LISTAR_CONVERSACIONES">
+    <Parameter Name="ID_USUARIO" Parameter="iD_USUARIO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="SP_LISTAR_CONVERSACIONESResult">
+      <Column Name="ID_CONVERSACION" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_USUARIO1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_USUARIO2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ES_SOPORTE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FECHA_CREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_LISTAR_MENSAJES" Method="SP_LISTAR_MENSAJES">
+    <Parameter Name="ID_CONVERSACION" Parameter="iD_CONVERSACION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="SP_LISTAR_MENSAJESResult">
+      <Column Name="ID_MENSAJES" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_CONVERSACION" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE_USUARIO" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MENSAJE" Type="System.String" DbType="NVarChar(700) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHA_CREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_LISTAR_PRODUCTO" Method="SP_LISTAR_PRODUCTO">
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="SP_LISTAR_PRODUCTOResult">
+      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="PRECIO" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PRECIO_ALQUILER" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="STOCK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIPO_OPERACION" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="CALIFICACION_PROMEDIO" Type="System.Decimal" DbType="Decimal(3,2)" CanBeNull="true" />
+      <Column Name="FECHA_PUBLICACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DISPONIBLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CATEGORIA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IMAGEN" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_LISTAR_PRODUCTOS_FILTRADOS" Method="SP_LISTAR_PRODUCTOS_FILTRADOS">
+    <Parameter Name="TIPO_OPERACION" Parameter="tIPO_OPERACION" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="PALABRA_CLAVE" Parameter="pALABRA_CLAVE" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="SP_LISTAR_PRODUCTOS_FILTRADOSResult">
+      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="PRECIO" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PRECIO_ALQUILER" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="STOCK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIPO_OPERACION" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="CALIFICACION_PROMEDIO" Type="System.Decimal" DbType="Decimal(3,2)" CanBeNull="true" />
+      <Column Name="FECHA_PUBLICACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CATEGORIA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IMAGEN" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_LISTAR_PRODUCTOS_RANDOM" Method="SP_LISTAR_PRODUCTOS_RANDOM">
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="SP_LISTAR_PRODUCTOS_RANDOMResult">
+      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="PRECIO" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PRECIO_ALQUILER" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="STOCK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIPO_OPERACION" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="CALIFICACION_PROMEDIO" Type="System.Decimal" DbType="Decimal(3,2)" CanBeNull="true" />
+      <Column Name="FECHA_PUBLICACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DISPONIBLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CATEGORIA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IMAGEN" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="ID_CATEGORIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_LOGIN_USUARIO" Method="SP_LOGIN_USUARIO">
+    <Parameter Name="CORREO" Parameter="cORREO" Type="System.String" DbType="NVarChar(55)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="SP_LOGIN_USUARIOResult">
+      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_PERSONA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NOMBRE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CORREO" Type="System.String" DbType="NVarChar(55)" CanBeNull="true" />
+      <Column Name="TELEFONO" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="UBICACION_STRING" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LATITUD" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LONGITUD" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ROL" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FECHA_ULTIMA_COMPRA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SEMILLA_1" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="SEMILLA_2" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="CONTRASENA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_MAPA" Method="SP_MAPA">
+    <Parameter Name="ID_USUARIO" Parameter="iD_USUARIO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RADIO_KM" Parameter="rADIO_KM" Type="System.Double" DbType="Float" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="SP_MAPAResult">
+      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CORREO" Type="System.String" DbType="NVarChar(55) NOT NULL" CanBeNull="false" />
+      <Column Name="TELEFONO" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="LATITUD" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LONGITUD" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DISTANCIA_KM" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ROL" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ESTADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_OBTENER_CONVERSACION" Method="SP_OBTENER_CONVERSACION">
+    <Parameter Name="ID_CONVERSACION" Parameter="iD_CONVERSACION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="SP_OBTENER_CONVERSACIONResult">
+      <Column Name="ID_CONVERSACION" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_USUARIO1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_USUARIO2" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ES_SOPORTE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FECHA_CREACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_OBTENER_FEEDBACK" Method="SP_OBTENER_FEEDBACK">
+    <Parameter Name="ID_PRODUCTO" Parameter="iD_PRODUCTO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="SP_OBTENER_FEEDBACKResult">
+      <Column Name="ID_FEEDBACK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE_PRODUCTO" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CALIFICACION" Type="System.Decimal" DbType="Decimal(3,2) NOT NULL" CanBeNull="false" />
+      <Column Name="COMENTARIO" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="FECHA_FEEDBACK" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_OBTENER_HISTORIAL_VISITAS" Method="SP_OBTENER_HISTORIAL_VISITAS">
+    <Parameter Name="ID_USUARIO" Parameter="iD_USUARIO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="SP_OBTENER_HISTORIAL_VISITASResult">
+      <Column Name="ID_HISTORIAL_VISITAS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE_PRODUCTO" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHA_VISTA" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_OBTENER_PRODUCTO" Method="SP_OBTENER_PRODUCTO">
+    <Parameter Name="ID_PRODUCTO" Parameter="iD_PRODUCTO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="SP_OBTENER_PRODUCTOResult">
+      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="PRECIO" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PRECIO_ALQUILER" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="STOCK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIPO_OPERACION" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="CALIFICACION_PROMEDIO" Type="System.Decimal" DbType="Decimal(3,2)" CanBeNull="true" />
+      <Column Name="FECHA_PUBLICACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DISPONIBLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CATEGORIA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IMAGEN" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_OBTENER_USUARIO" Method="SP_OBTENER_USUARIO">
+    <Parameter Name="ID_USUARIO" Parameter="iD_USUARIO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="SP_OBTENER_USUARIOResult">
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdPersona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CORREO" Type="System.String" DbType="NVarChar(55) NOT NULL" CanBeNull="false" />
+      <Column Name="TELEFONO" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="UBICACION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LATITUD" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="LONGITUD" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ROL" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ESTADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_OBTENER_VERIFICACION" Method="SP_OBTENER_VERIFICACION">
+    <Parameter Name="CORREO" Parameter="cORREO" Type="System.String" DbType="NVarChar(55)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="SP_OBTENER_VERIFICACIONResult">
+      <Column Name="ID_VERIFICACION" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CORREO" Type="System.String" DbType="NVarChar(55) NOT NULL" CanBeNull="false" />
+      <Column Name="CODEVERIFICACION" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHA_REGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_PRODUCTOS_BUSCADOS" Method="SP_PRODUCTOS_BUSCADOS">
+    <Parameter Name="TEXTO_BUSQUEDA" Parameter="tEXTO_BUSQUEDA" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="SP_PRODUCTOS_BUSCADOSResult">
+      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="PRECIO" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PRECIO_ALQUILER" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="STOCK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIPO_OPERACION" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="CALIFICACION_PROMEDIO" Type="System.Decimal" DbType="Decimal(3,2)" CanBeNull="true" />
+      <Column Name="FECHA_PUBLICACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CATEGORIA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IMAGEN" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="DISPONIBLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_REGISTRAR_USUARIO" Method="SP_REGISTRAR_USUARIO">
+    <Parameter Name="NOMBRE" Parameter="nOMBRE" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CORREO" Parameter="cORREO" Type="System.String" DbType="NVarChar(55)" />
+    <Parameter Name="TELEFONO" Parameter="tELEFONO" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="ROL" Parameter="rOL" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="CONTRASENA" Parameter="cONTRASENA" Type="System.String" DbType="NVarChar(128)" />
+    <Parameter Name="SEMILLA_1" Parameter="sEMILLA_1" Type="System.String" DbType="NVarChar(128)" />
+    <Parameter Name="SEMILLA_2" Parameter="sEMILLA_2" Type="System.String" DbType="NVarChar(128)" />
+    <Parameter Name="LATITUD" Parameter="lATITUD" Type="System.Double" DbType="Float" />
+    <Parameter Name="LONGITUD" Parameter="lONGITUD" Type="System.Double" DbType="Float" />
+    <Parameter Name="ESTADO" Parameter="eSTADO" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="ID_USUARIO" Parameter="iD_USUARIO" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_VERIFICACION_COMPLETADA" Method="SP_VERIFICACION_COMPLETADA">
+    <Parameter Name="ID_VERIFICACION" Parameter="iD_VERIFICACION" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CORREO" Parameter="cORREO" Type="System.String" DbType="NVarChar(55)" />
+    <Parameter Name="ESTADO" Parameter="eSTADO" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="IDRETURN" Parameter="iDRETURN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORID" Parameter="eRRORID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="ERRORDESCRIPCION" Parameter="eRRORDESCRIPCION" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <ElementType Name="SP_VERIFICACION_COMPLETADAResult">
+      <Column Name="ID_VERIFICACION" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CORREO" Type="System.String" DbType="NVarChar(55) NOT NULL" CanBeNull="false" />
+      <Column Name="CODEVERIFICACION" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHA_REGISTRO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ESTADO_PROCESADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

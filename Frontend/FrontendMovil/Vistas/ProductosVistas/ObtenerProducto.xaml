@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- ============================================================ -->
+<!--                    ProductoPage.xaml                         -->
+<!-- Página para mostrar el detalle de un producto                -->
+<!-- ============================================================ -->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:FrontendMovil.Utilitarios"
+             x:Class="FrontendMovil.Vistas.ObtenerProducto"
+             Title="Producto"
+             BackgroundColor="#F5F5F5">
+    <Grid RowDefinitions="*, Auto">
+        <ScrollView>
+            <StackLayout Margin="20" Spacing="15">
+                
+                <StackLayout.Resources>
+                    <!-- Paleta Neutra con vida -->
+
+                    <Color x:Key="ButtonColor">#3759BF</Color>
+                    <!-- Botones y destacados -->
+                    <Color x:Key="EntryColor">#DADADA</Color>
+                    <!-- Botones y destacados -->
+                    <Color x:Key="TextColor">#2C3E50</Color>
+                    <!-- Texto principal -->
+                    <Color x:Key="ButtonTextColor">#FFFFFF</Color>
+                    <!-- Texto sobre botones -->
+                    <Color x:Key="PlaceholderColor">#2C3E50</Color>
+                    <!-- Placeholder (puede ajustarse) -->
+
+                    <!-- BTN -->
+                    <Style TargetType="Button">
+                        <Setter Property="FontSize" Value="14" />
+                        <Setter Property="BackgroundColor" Value="{StaticResource ButtonColor}" />
+                        <Setter Property="TextColor" Value="{StaticResource ButtonTextColor}" />
+                        <Setter Property="CornerRadius" Value="8" />
+                    </Style>
+
+                    <!-- TXT -->
+                    <Style TargetType="Entry">
+                        <Setter Property="PlaceholderColor" Value="{StaticResource PlaceholderColor}" />
+                        <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+                        <Setter Property="BackgroundColor" Value="{StaticResource EntryColor}"/>
+                    </Style>
+
+                    <!-- LBL Título 1 -->
+                    <Style x:Key="Titulo1LabelStyle" TargetType="Label">
+                        <Setter Property="FontSize" Value="24" />
+                        <Setter Property="FontAttributes" Value="Bold" />
+                        <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                    </Style>
+
+                    <!-- LBL Título 2 -->
+                    <Style x:Key="Titulo2LabelStyle" TargetType="Label">
+                        <Setter Property="FontSize" Value="18" />
+                        <Setter Property="FontAttributes" Value="Bold" />
+                        <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                    </Style>
+
+                    <!-- LBL Párrafo -->
+                    <Style x:Key="ParrafoLabelStyle" TargetType="Label">
+                        <Setter Property="FontSize" Value="14" />
+                        <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                        <Setter Property="TextType" Value="Html"/>
+                    </Style>
+                    <!-- Converter -->
+                    <converters:ByteArrayToImageSourceConverter x:Key="ByteArrayToImageSourceConverter" />
+                </StackLayout.Resources>
+
+                <Label Text="Producto" 
+                       Style="{StaticResource Titulo1LabelStyle}"
+                       HorizontalOptions="Center"/>
+
+                <Image x:Name="ImagenProducto" Source="{Binding Imagen, Converter={StaticResource ByteArrayToImageSourceConverter}}"
+                       WidthRequest="300"
+                       MinimumHeightRequest="100"                       
+                       Aspect="AspectFill"/>
+                
+                <Label x:Name="TXT_Nombre" 
+                       Style="{StaticResource ParrafoLabelStyle}"/>
+                
+                <Label x:Name="TXT_Descripcion" 
+                       Style="{StaticResource ParrafoLabelStyle}"/>
+                
+                <Label x:Name="TXT_Precio" 
+                       Style="{StaticResource ParrafoLabelStyle}"/>
+                
+                <Label x:Name="TXT_PrecioAlquiler" 
+                       Style="{StaticResource ParrafoLabelStyle}"/>
+                
+                <Label x:Name="TXT_Stock" 
+                       Style="{StaticResource ParrafoLabelStyle}"/>
+                
+                <Label x:Name="TXT_CalificacionPromedio" 
+                       Style="{StaticResource ParrafoLabelStyle}"/>
+                
+                <Label x:Name="TXT_Categoria" 
+                       Style="{StaticResource ParrafoLabelStyle}"/>
+
+                <Label Text="Comentarios" 
+                       Style="{StaticResource Titulo1LabelStyle}"/>
+
+                <!--Template-->
+                <CollectionView x:Name="CollectionViewFeedbacks" 
+                            ItemsSource="{Binding ListaFeedbacks}" 
+                            ItemsLayout="HorizontalList">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="#DADADA"
+                               CornerRadius="10"
+                               Padding="10"
+                               WidthRequest="150"
+                               MinimumHeightRequest="80"
+                               Margin="5">
+                                <StackLayout Spacing="5">
+                                    <Label Text="{Binding Comentario}"
+                                       FontSize="14"
+                                       TextColor="#2C3E50"/>
+
+                                    <Label Text="{Binding Calificacion, StringFormat='★ {0:N1}'}"
+                                       FontSize="12"
+                                       TextColor="#D4B45A" />
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Button x:Name="BTN_AgregarComentario"
+                        Text="Agregar comentario"
+                        Clicked="BTN_AgregarComentario_Clicked"/>
+
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Menú inferior integrado -->
+        <Grid Grid.Row="1" BackgroundColor="#FFFFFF" HeightRequest="60" Padding="10">
+            <Grid.Resources>
+                <Color x:Key="PrimaryColor">#FFFFFF</Color>
+                <Color x:Key="TextColor">#2C3E50</Color>
+                <Style TargetType="Button">
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
+                    <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                    <Setter Property="CornerRadius" Value="8" />
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button x:Name="BTN_Main" Text="Inicio" Clicked="BTN_Main_Clicked"/>
+            </StackLayout>
+
+            <StackLayout Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button x:Name="BTN_Buscar" Text="Buscar" Clicked="BTN_Buscar_Clicked"/>
+            </StackLayout>
+
+            <StackLayout Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button x:Name="BTN_IngresarProducto" Text="Ingresar Producto" Clicked="BTN_IngresarProducto_Clicked"/>
+            </StackLayout>
+
+            <StackLayout Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button x:Name="BTN_Chats" Text="Chats" Clicked="BTN_Chats_Clicked"/>
+            </StackLayout>
+
+            <StackLayout Grid.Column="4" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button x:Name="BTN_Cuenta" Text="Cuenta" Clicked="BTN_Cuenta_Clicked"/>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- ============================================================ -->
+<!--                   RegistrarPage.xaml                         -->
+<!-- Página para registrar nuevos usuarios                      -->
+<!-- ============================================================ -->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FrontendMovil.Vistas.Registrarse"
+             Title="Registrarse"
+             BackgroundColor="#F5F5F5">
+    <ScrollView>
+        <StackLayout Margin="20" Spacing="15">
+
+            <StackLayout.Resources>
+                <!-- Paleta Neutra con vida -->
+
+                <Color x:Key="ButtonColor">#3759BF</Color>
+                <!-- Botones y destacados -->
+                <Color x:Key="EntryColor">#DADADA</Color>
+                <!-- Botones y destacados -->
+                <Color x:Key="TextColor">#2C3E50</Color>
+                <!-- Texto principal -->
+                <Color x:Key="ButtonTextColor">#FFFFFF</Color>
+                <!-- Texto sobre botones -->
+                <Color x:Key="PlaceholderColor">#2C3E50</Color>
+                <!-- Placeholder (puede ajustarse) -->
+
+                <!-- BTN -->
+                <Style TargetType="Button">
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="BackgroundColor" Value="{StaticResource ButtonColor}" />
+                    <Setter Property="TextColor" Value="{StaticResource ButtonTextColor}" />
+                    <Setter Property="CornerRadius" Value="8" />
+                </Style>
+
+                <!-- TXT -->
+                <Style TargetType="Entry">
+                    <Setter Property="PlaceholderColor" Value="{StaticResource PlaceholderColor}" />
+                    <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+                    <Setter Property="BackgroundColor" Value="{StaticResource EntryColor}"/>
+                </Style>
+
+                <!-- LBL Título 1 -->
+                <Style x:Key="Titulo1LabelStyle" TargetType="Label">
+                    <Setter Property="FontSize" Value="24" />
+                    <Setter Property="FontAttributes" Value="Bold" />
+                    <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                </Style>
+
+                <!-- LBL Título 2 -->
+                <Style x:Key="Titulo2LabelStyle" TargetType="Label">
+                    <Setter Property="FontSize" Value="18" />
+                    <Setter Property="FontAttributes" Value="Bold" />
+                    <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                </Style>
+
+                <!-- LBL Párrafo -->
+                <Style x:Key="ParrafoLabelStyle" TargetType="Label">
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                </Style>
+            </StackLayout.Resources>
+
+            <Label Text="Registrarse" 
+                   Style="{StaticResource Titulo1LabelStyle}"/>
+
+            <Entry x:Name="TXT_NombreCompleto" 
+                   Placeholder="Nombre completo"
+                   Keyboard="Default"/>
+
+            <Entry x:Name="TXT_Telefono" 
+                   Placeholder="Telefono"
+                   Keyboard="Telephone"/>
+
+            <Entry x:Name="TXT_Correo" 
+                   Placeholder="Correo"
+                   Keyboard="Email"/>
+
+            <StackLayout Spacing="4" Padding="10">
+                <Label Style="{StaticResource ParrafoLabelStyle}"
+                       Text="La contraseña debe cumplir con:" />
+
+                <Label Style="{StaticResource ParrafoLabelStyle}"
+                       Text="- Al menos una letra mayúscula" />
+
+                <Label Style="{StaticResource ParrafoLabelStyle}"
+                       Text="- Al menos una letra minúscula" />
+
+                <Label Style="{StaticResource ParrafoLabelStyle}"
+                       Text="- Al menos un dígito numérico" />
+
+                <Label Style="{StaticResource ParrafoLabelStyle}"
+                       Text="- Al menos un carácter especial" />
+
+                <Label Style="{StaticResource ParrafoLabelStyle}"
+                       Text="- Longitud mínima de 8 caracteres" />
+            </StackLayout>
+
+            <Entry x:Name="TXT_Contrasena" 
+                   Placeholder="Contraseña" 
+                   IsPassword="True"
+                   Keyboard="Default"/>
+
+            <Label Text="La longitud y latitud si va con decimales los tiene que poner con coma"
+                   Style="{StaticResource ParrafoLabelStyle}"/>
+
+            <Entry x:Name="TXT_Longitud" 
+                   Placeholder="Longitud"
+                   Keyboard="Default"/>
+
+            <Entry x:Name="TXT_Latitud" 
+                   Placeholder="Latitud"
+                   Keyboard="Default"/>
+
+            <Button x:Name="BTN_Registrarse" 
+                    Text="Registrarse"
+                    Clicked="BTN_Registrarse_Clicked"/>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

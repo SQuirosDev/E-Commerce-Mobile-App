@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- ============================================================ -->
+<!--               IngresarProductoPage.xaml                      -->
+<!-- Página para que el usuario registre un nuevo producto        -->
+<!-- ============================================================ -->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FrontendMovil.Vistas.IngresarProducto"
+             Title="IngresarProducto"
+             BackgroundColor="#F5F5F5">
+    <Grid RowDefinitions="*, Auto">
+        <ScrollView>
+            <StackLayout Margin="20" Spacing="15">
+                
+                <StackLayout.Resources>
+                    <!-- Paleta Neutra con vida -->
+
+                    <Color x:Key="ButtonColor">#3759BF</Color>
+                    <Color x:Key="EntryColor">#DADADA</Color>
+                    <Color x:Key="PickerColor">#DADADA</Color>
+                    <Color x:Key="TextColor">#2C3E50</Color>
+                    <Color x:Key="ButtonTextColor">#FFFFFF</Color>
+                    <Color x:Key="PlaceholderColor">#2C3E50</Color>
+
+                    <!-- BTN -->
+                    <Style TargetType="Button">
+                        <Setter Property="FontSize" Value="14" />
+                        <Setter Property="BackgroundColor" Value="{StaticResource ButtonColor}" />
+                        <Setter Property="TextColor" Value="{StaticResource ButtonTextColor}" />
+                        <Setter Property="CornerRadius" Value="8" />
+                    </Style>
+
+                    <!-- TXT -->
+                    <Style TargetType="Entry">
+                        <Setter Property="PlaceholderColor" Value="{StaticResource PlaceholderColor}" />
+                        <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+                        <Setter Property="BackgroundColor" Value="{StaticResource EntryColor}"/>
+                    </Style>
+
+                    <!--CBO-->
+                    <Style TargetType="Picker">
+                        <Setter Property="BackgroundColor" Value="{StaticResource EntryColor}"/>
+                        <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+                        <Setter Property="TitleColor" Value="{StaticResource TextColor}"/>
+                    </Style>
+
+                    <!-- LBL Título 1 -->
+                    <Style x:Key="Titulo1LabelStyle" TargetType="Label">
+                        <Setter Property="FontSize" Value="24" />
+                        <Setter Property="FontAttributes" Value="Bold" />
+                        <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                    </Style>
+
+                    <!-- LBL Título 2 -->
+                    <Style x:Key="Titulo2LabelStyle" TargetType="Label">
+                        <Setter Property="FontSize" Value="18" />
+                        <Setter Property="FontAttributes" Value="Bold" />
+                        <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                    </Style>
+
+                    <!-- LBL Párrafo -->
+                    <Style x:Key="ParrafoLabelStyle" TargetType="Label">
+                        <Setter Property="FontSize" Value="14" />
+                        <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                    </Style>
+                </StackLayout.Resources>
+
+                <Label Text="Ingresar Producto" 
+                       Style="{StaticResource Titulo1LabelStyle}"
+                       HorizontalOptions="Center"/>
+                
+                <Entry x:Name="TXT_Nombre" 
+                       Placeholder="Nombre del Producto"
+                       Keyboard="Default"/>
+
+                <Label Text="La descripcion tiene que tener mas de 10 caracteres" 
+                       Style="{StaticResource ParrafoLabelStyle}"/>
+
+                <Entry x:Name="TXT_Descripcion" 
+                       Placeholder="Descripción"
+                       Keyboard="Default"/>
+
+                <Label Text="Ya los precios se establecen en colones" 
+                       Style="{StaticResource ParrafoLabelStyle}"/>
+
+                <Entry x:Name="TXT_Precio" 
+                       Placeholder="Precio"
+                       Keyboard="Numeric"/>
+                
+                <Entry x:Name="TXT_PrecioAlquiler" 
+                       Placeholder="Precio de alquiler"
+                       Keyboard="Numeric"/>
+                
+                <Entry x:Name="TXT_Stock" 
+                       Placeholder="Stock"
+                       Keyboard="Numeric"/>
+
+                <Picker x:Name="CBO_Categoria"
+                        Title="Categoria">
+                    <Picker.Items>
+                        <x:String>Deportes</x:String>
+                        <x:String>Tecnologia</x:String>
+                        <x:String>Video juegos</x:String>
+                        <x:String>Consolas</x:String>
+                        <x:String>Carros</x:String>
+                        <x:String>Casas</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Button x:Name="BTN_SeleccionarImagen" 
+                        Text="Seleccionar Imagen"
+                        Clicked="BTN_SeleccionarImagen_Clicked" />
+                
+                <Image x:Name="ImagenPreview"
+                       WidthRequest="300"
+                       MinimumHeightRequest="100"
+                       Aspect="AspectFill"/>
+
+                <Button x:Name="BTN_GuardarProducto" 
+                    Text="Guardar Producto"
+                    Clicked="BTN_GuardarProducto_Clicked"/>
+                
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Menú inferior integrado -->
+        <Grid Grid.Row="1" BackgroundColor="#FFFFFF" HeightRequest="60" Padding="10">
+            <Grid.Resources>
+                <Color x:Key="PrimaryColor">#FFFFFF</Color>
+                <Color x:Key="TextColor">#2C3E50</Color>
+                <Style TargetType="Button">
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
+                    <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                    <Setter Property="CornerRadius" Value="8" />
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button x:Name="BTN_Main" Text="Inicio" Clicked="BTN_Main_Clicked"/>
+            </StackLayout>
+
+            <StackLayout Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button x:Name="BTN_Buscar" Text="Buscar" Clicked="BTN_Buscar_Clicked"/>
+            </StackLayout>
+
+            <StackLayout Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button x:Name="BTN_IngresarProducto" Text="Ingresar Producto" Clicked="BTN_IngresarProducto_Clicked"/>
+            </StackLayout>
+
+            <StackLayout Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button x:Name="BTN_Chats" Text="Chats" Clicked="BTN_Chats_Clicked"/>
+            </StackLayout>
+
+            <StackLayout Grid.Column="4" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button x:Name="BTN_Cuenta" Text="Cuenta" Clicked="BTN_Cuenta_Clicked"/>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

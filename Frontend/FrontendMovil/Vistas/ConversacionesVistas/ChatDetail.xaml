@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="FrontendMovil.Vistas.ChatDetail"
+    BackgroundColor="#FAFAFA"
+    Padding="16">
+
+    <!-- Recursos de estilo -->
+    <ContentPage.Resources>
+        <!-- Entrada de texto -->
+        <Style TargetType="Entry">
+            <Setter Property="HeightRequest" Value="48"/>
+            <Setter Property="Margin" Value="0,8"/>
+            <Setter Property="BackgroundColor" Value="White"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="PlaceholderColor" Value="#888888"/>
+        </Style>
+
+        <!-- Etiquetas / chats -->
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="Margin" Value="0,8"/>
+        </Style>
+
+        <!-- Botones generales -->
+        <Style TargetType="Button">
+            <Setter Property="HeightRequest" Value="48"/>
+            <Setter Property="CornerRadius" Value="24"/>
+            <Setter Property="BackgroundColor" Value="#007ACC"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="Margin" Value="0,8"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <!-- Grid principal que contiene el chat y el menú -->
+    <Grid x:Name="PrincipalGrid"
+          RowDefinitions="*, Auto"
+          RowSpacing="0">
+
+        <!-- 2º Grid: área de chat -->
+        <Grid x:Name="ChatGrid"
+              Grid.Row="0"
+              RowDefinitions="Auto, *, Auto"
+              RowSpacing="12">
+
+            <!-- 0: Nombre de usuario -->
+            <Entry
+                Grid.Row="0"
+                x:Name="txtUsername"
+                Placeholder="Your name"
+                Keyboard="Text" />
+
+            <!-- 1: Ventana de chat -->
+            <Frame
+                Grid.Row="1"
+                Padding="12"
+                HasShadow="False"
+                BackgroundColor="White"
+                CornerRadius="12">
+                <ScrollView>
+                    <Label
+                        x:Name="lblChat"
+                        FontSize="18"
+                        TextType="Text"
+                        LineBreakMode="WordWrap" />
+                </ScrollView>
+            </Frame>
+
+            <!-- 2: Mensaje + botón Enviar -->
+            <Grid
+                Grid.Row="2"
+                ColumnDefinitions="*, Auto"
+                ColumnSpacing="8">
+                <Entry
+                    x:Name="txtMessage"
+                    Placeholder="Enter your message"
+                    Grid.Column="0" />
+                <Button
+                    x:Name="BTN_SEND"
+                    Text="Send"
+                    Grid.Column="1"
+                    WidthRequest="80"
+                    Clicked="BTN_SEND_Clicked" />
+            </Grid>
+
+        </Grid>
+
+        <!-- 3º Grid: menú inferior -->
+        <Grid
+            x:Name="MenuGrid"
+            Grid.Row="1"
+            BackgroundColor="#FFFFFF"
+            HeightRequest="60"
+            Padding="10"
+            Margin="0,12,0,0">
+
+            <Grid.Resources>
+                <Color x:Key="PrimaryColor">#FFFFFF</Color>
+                <Color x:Key="TextColor">#2C3E50</Color>
+                <!-- Estilo solo para botones de menú -->
+                <Style TargetType="Button">
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
+                    <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                    <Setter Property="CornerRadius" Value="8" />
+                </Style>
+            </Grid.Resources>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button x:Name="BTN_Main" Text="Inicio" Clicked="BTN_Main_Clicked"/>
+            </StackLayout>
+            <StackLayout Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button x:Name="BTN_Buscar" Text="Buscar" Clicked="BTN_Buscar_Clicked"/>
+            </StackLayout>
+            <StackLayout Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button x:Name="BTN_IngresarProducto" Text="Ingresar Producto" Clicked="BTN_IngresarProducto_Clicked"/>
+            </StackLayout>
+            <StackLayout Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button x:Name="BTN_Chats" Text="Chats" Clicked="BTN_Chats_Clicked"/>
+            </StackLayout>
+            <StackLayout Grid.Column="4" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button x:Name="BTN_Cuenta" Text="Cuenta" Clicked="BTN_Cuenta_Clicked"/>
+            </StackLayout>
+
+        </Grid>
+    </Grid>
+</ContentPage>

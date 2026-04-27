@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- ============================================================ -->
+<!--               CodigoVerificacionPage.xaml                    -->
+<!-- Página para ingresar el código de verificación              -->
+<!-- ============================================================ -->
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FrontendMovil.Vistas.CodigoVerificacion"
+             Title="Verificar cuenta"
+             BackgroundColor="#F5F5F5">
+    <ScrollView>
+        <StackLayout Margin="20" Spacing="15">
+
+            <StackLayout.Resources>
+                <!-- Paleta Neutra con vida -->
+
+                <Color x:Key="ButtonColor">#3759BF</Color>
+                <!-- Botones y destacados -->
+                <Color x:Key="EntryColor">#DADADA</Color>
+                <!-- Botones y destacados -->
+                <Color x:Key="TextColor">#2C3E50</Color>
+                <!-- Texto principal -->
+                <Color x:Key="ButtonTextColor">#FFFFFF</Color>
+                <!-- Texto sobre botones -->
+                <Color x:Key="PlaceholderColor">#2C3E50</Color>
+                <!-- Placeholder (puede ajustarse) -->
+
+                <!-- BTN -->
+                <Style TargetType="Button">
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="BackgroundColor" Value="{StaticResource ButtonColor}" />
+                    <Setter Property="TextColor" Value="{StaticResource ButtonTextColor}" />
+                    <Setter Property="CornerRadius" Value="8" />
+                </Style>
+
+                <!-- TXT -->
+                <Style TargetType="Entry">
+                    <Setter Property="PlaceholderColor" Value="{StaticResource PlaceholderColor}" />
+                    <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+                    <Setter Property="BackgroundColor" Value="{StaticResource EntryColor}"/>
+                </Style>
+
+                <!-- LBL Título 1 -->
+                <Style x:Key="Titulo1LabelStyle" TargetType="Label">
+                    <Setter Property="FontSize" Value="24" />
+                    <Setter Property="FontAttributes" Value="Bold" />
+                    <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                </Style>
+
+                <!-- LBL Título 2 -->
+                <Style x:Key="Titulo2LabelStyle" TargetType="Label">
+                    <Setter Property="FontSize" Value="18" />
+                    <Setter Property="FontAttributes" Value="Bold" />
+                    <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                </Style>
+
+                <!-- LBL Párrafo -->
+                <Style x:Key="ParrafoLabelStyle" TargetType="Label">
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="TextColor" Value="{StaticResource TextColor}" />
+                </Style>
+            </StackLayout.Resources>
+
+            <Label Text="Verificar cuenta" 
+                   Style="{StaticResource Titulo1LabelStyle}"/>
+            
+            <Label Text="{Binding Correo, StringFormat='Ingresa el código de verificación que le llegó a este correo: {0}'}"
+                   Style="{StaticResource ParrafoLabelStyle}"/>
+            
+            <Entry x:Name="TXT_CodigoVerificacion" 
+                   Placeholder="Código de verificación"
+                   Keyboard="Numeric"/>
+            
+            <Button x:Name="BTN_Verificar" 
+                    Text="Verificar"
+                    Clicked="BTN_Verificar_Clicked"/>
+            
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

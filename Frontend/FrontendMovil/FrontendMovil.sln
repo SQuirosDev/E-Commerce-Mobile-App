@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontendMovil", "FrontendMovil.csproj", "{75FC5EE6-528E-4974-995E-09EB6CB0A700}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServidorSignalR", "..\ServidorSignalR\ServidorSignalR.csproj", "{103C924D-8797-4282-8476-4B59990C77B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75FC5EE6-528E-4974-995E-09EB6CB0A700}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75FC5EE6-528E-4974-995E-09EB6CB0A700}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75FC5EE6-528E-4974-995E-09EB6CB0A700}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{75FC5EE6-528E-4974-995E-09EB6CB0A700}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75FC5EE6-528E-4974-995E-09EB6CB0A700}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75FC5EE6-528E-4974-995E-09EB6CB0A700}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{103C924D-8797-4282-8476-4B59990C77B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{103C924D-8797-4282-8476-4B59990C77B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{103C924D-8797-4282-8476-4B59990C77B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{103C924D-8797-4282-8476-4B59990C77B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {397F7CF5-38D1-411C-9BF9-E377ADC0AC73}
+	EndGlobalSection
+EndGlobal
